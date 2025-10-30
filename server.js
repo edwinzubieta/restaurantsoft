@@ -1,23 +1,27 @@
 // server.js
 
-// 1. IMPORTACIONES Y CONFIGURACIÓN INICIAL
+
+
+// 1. IMPORTACIONES
 const express = require('express');
 const { PrismaClient } = require('@prisma/client');
+const cors = require('cors');
 
 // 2. INICIALIZACIONES
 const app = express();
-const prisma = new PrismaClient(); // Instancia del cliente de Prisma
+const prisma = new PrismaClient();
 
 // 3. MIDDLEWARE
-// Middleware para que Express entienda peticiones con cuerpo en formato JSON
+app.use(cors()); // 
 app.use(express.json());
+
 
 
 // 4. ENDPOINTS DE LA API
 
 /*
 ===============================================
- ENDPOINTS PARA PLATOS
+ENDPOINTS PARA PLATOS
 ===============================================
 */
 
